@@ -128,11 +128,11 @@ Danmmu Player意在使开发者能便捷的在网站中实现弹幕视频播放�
 
 $("#danmup").danmuplayer({
 
-  src:"shsn.mp4",       //视频源
+  src:"danmu.mp4",       //视频源
 
-  width:800,			//视频宽度
+  width:100%,			//视频宽度
 
-  height:445			//视频高度
+  height:100%			//视频高度
 
 });
 
@@ -154,11 +154,11 @@ $("#danmup").danmuplayer({
 
 ```javascript
 
-src: "shsn.mp4",    //视频源
+src: "danmu.mp4",    //视频源
 
-height: 450,             //播放器的高度
+height: 100%,             //播放器的高度
 
-width: 800,				//播放器的宽度,最小宽度支持为720
+width: 100%,				//播放器的宽度,最小宽度支持为720
 
 speed:20000,			//弹幕速度，这是数值指的是视频穿过672像素所需要的毫秒数
 
@@ -198,11 +198,13 @@ danmu对象意指具体某一条弹幕以及它的信息，它有如下属性：
 
 ```javascript
 
+nickname——用户名。
+
 text——弹幕文本内容。
 
 color——弹幕颜色。
 
-position——弹幕位置 0为滚动 1 为顶部 2为底部
+position——弹幕位置 0为滚动 1 为顶部 2为底部 3为直播用户对话模式
 
 size——弹幕文字大小。 0为小字 1为大字
 
@@ -218,7 +220,7 @@ isnew——当出现该属性时（属性值可为任意），会认为这是用
 
 ```javascript
 
-var aDanmu={ text:"这是弹幕" ,color:"white",size:1,position:0,time:2};
+var aDanmu={nickname:"nickname", text:"这是弹幕" ,color:"white",size:1,position:0,time:2};
 
 ```
 
@@ -226,7 +228,7 @@ var aDanmu={ text:"这是弹幕" ,color:"white",size:1,position:0,time:2};
 
 ```javascript
 
-var aDanmu={ text:"这是弹幕" ,color:"white",size:1,position:1,time:2,isnew:1};
+var aDanmu={nickname:"nickname", text:"这是弹幕" ,color:"white",size:1,position:1,time:2,isnew:1};
 
 ```
 
@@ -282,11 +284,11 @@ $('#danmp .danmu-div').danmu(addDanmu,弹幕对象 或 弹幕对象数组);
 
 $("#danmup .danmu-div").danmu("addDanmu",[
 
-   {text:"这是滚动弹幕" ,color:"white",size:1,position:0,time:2}
+   {nickname:"nickname", text:"这是滚动弹幕" ,color:"white",size:1,position:0,time:2}
 
-  ,{text:"这是顶部弹幕" ,color:"yellow" ,size:1,position:1,time:3}
+  ,{nickname:"nickname", text:"这是顶部弹幕" ,color:"yellow" ,size:1,position:1,time:3}
 
-  ,{text:"这是底部弹幕" , color:"red" ,size:1,position:2,time:3}
+  ,{nickname:"nickname", text:"这是底部弹幕" , color:"red" ,size:1,position:2,time:3}
 
 ])
 
@@ -332,7 +334,7 @@ $("#danmup .danmu-div").danmu("addDanmu",[
 
 ```html
 
-DanmuPlayer (//github.com/chiruom/danmuplayer/) - Licensed under the MIT license
+DanmuPlayer (//github.com/guangxiao/danmuplayer/) - Licensed under the MIT license
 
 ```
 
